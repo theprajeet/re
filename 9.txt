@@ -1,15 +1,5 @@
-import React from 'react';
+// ----------- About.js (components folder) ----------------
 
-const Home = () => {
-  return (
-    <div>
-      <h2>Home Page</h2>
-      <p>Welcome to the Home Page!</p>
-    </div>
-  );
-};
-
-export default Home;
 import React from 'react';
 
 const About = () => {
@@ -22,6 +12,24 @@ const About = () => {
 };
 
 export default About;
+
+// -------------- Home.js ---------------
+
+import React from 'react';
+
+const Home = () => {
+  return (
+    <div>
+      <h2>Home Page</h2>
+      <p>Welcome to the Home Page!</p>
+    </div>
+  );
+};
+
+export default Home;
+
+// --------------- Contact.js --------------
+
 import React from 'react';
 
 const Contact = () => {
@@ -34,6 +42,9 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// ---------------- Navbar.js -----------------
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -71,6 +82,9 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// ------------- App.js --------------------
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -97,6 +111,23 @@ const App = () => {
 };
 
 export default App;
+
+// -------- Index.js ------------
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+
+// --------------- App.css ------------
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -157,11 +188,5 @@ p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
 
-const rootElement = document.getElementById('root');
-const root = ReactDOM.createRoot(rootElement);
 
-root.render(<App />);

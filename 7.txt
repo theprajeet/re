@@ -1,3 +1,5 @@
+// -------------- ProfileCard.js (No components folder) -------------
+
 import React, { useState } from 'react';
 
 const ProfileCard = ({ name, bio, profilePicture }) => {
@@ -32,6 +34,8 @@ const ProfileCard = ({ name, bio, profilePicture }) => {
 };
 
 export default ProfileCard;
+
+// --------- App.js ----------
 import React from 'react';
 import ProfileCard from './ProfileCard';
 import './App.css'
@@ -48,6 +52,22 @@ const App = () => {
     </div>
   );
 };
+
+// ------ Index.js --------
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+
+// --------- App.css ---------
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f7fa;

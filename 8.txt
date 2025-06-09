@@ -1,3 +1,21 @@
+// ------------ Filter.js (component folder) -------------
+
+import React from 'react';
+
+function Filter({ setFilter }) {
+  return (
+    <div>
+      <button onClick={() => setFilter('all')}>All Tasks</button>
+      <button onClick={() => setFilter('completed')}>Completed Tasks</button>
+      <button onClick={() => setFilter('not-completed')}>Pending Tasks</button>
+    </div>
+  );
+}
+
+export default Filter;
+
+// ---------------- TaskForm.js --------------
+
 import React, { useState } from 'react';
 
 function TaskForm({ addTask }) {
@@ -54,19 +72,9 @@ function TaskForm({ addTask }) {
 }
 
 export default TaskForm;
-import React from 'react';
 
-function Filter({ setFilter }) {
-  return (
-    <div>
-      <button onClick={() => setFilter('all')}>All Tasks</button>
-      <button onClick={() => setFilter('completed')}>Completed Tasks</button>
-      <button onClick={() => setFilter('not-completed')}>Pending Tasks</button>
-    </div>
-  );
-}
+// -------------- TaskList.js --------------
 
-export default Filter;
 import React from 'react';
 
 function TaskList({ tasks, setTasks }) {
@@ -107,6 +115,9 @@ function TaskList({ tasks, setTasks }) {
 }
 
 export default TaskList;
+
+// ------------ App.js --------------
+
 import React, { useState } from 'react';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
@@ -142,6 +153,23 @@ function App() {
 }
 
 export default App;
+
+// ------------ Index.js -------------
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+
+// --------------- App.css ------------------
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;

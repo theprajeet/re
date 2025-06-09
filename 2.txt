@@ -1,4 +1,4 @@
-// App.js
+// --------- App.js ---------------
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
@@ -19,7 +19,7 @@ function App() {
 
 export default App;
 
-// Header.js
+// -------------- Header.js (No compoents folder needed) -------------------
 import React from 'react';
 
 function Header(props) {
@@ -32,7 +32,7 @@ function Header(props) {
 
 export default Header;
 
-// Footer.js
+// ----------- Footer.js --------------
 import React from 'react';
 
 function Footer(props) {
@@ -46,7 +46,21 @@ function Footer(props) {
 
 export default Footer;
 
-// App.css
+// --------- Index.js ----------------
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+
+// --------------- App.css ----------------
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
